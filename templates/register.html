@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Ro'yxatdan O'tish</h1>
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}<br>
+    {% endfor %}
+{% endif %}
+<form action="{% url 'signup' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" required style="height: 30px; width: 200px"><br>
+    <input type="text" name="firstname" placeholder="First Name" required style="height: 30px; width: 200px"><br>
+    <input type="text" name="lastname" placeholder="Last Name" required style="height: 30px; width: 200px"><br>
+    <input type="email" name="email" placeholder="Email" required style="height: 30px; width: 200px"><br>
+    <input type="password" name="password1" placeholder="Password" required style="height: 30px; width: 200px"><br>
+    <input type="password" name="password2" placeholder="Password confirm" required
+           style="height: 30px; width: 200px"><br>
+    <input type="submit" value="Sign In"><br>
+</form>
+</body>
+</html>
